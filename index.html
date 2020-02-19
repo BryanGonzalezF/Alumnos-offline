@@ -9,7 +9,6 @@
 </head>
 <body>
     <form method="post" id="frmConversores">
-
         <div class="container">
             <div class="row row-cols-2">
                 <div class="col text-center">
@@ -19,7 +18,7 @@
             <div class="row row-cols-4 p-2">
                 <div class="col">
                     De:
-                    <select name="" id="CboDe" class="form-control">
+                    <select id="CboDe" class="form-control">
                         <option value="Dolar">Dolar</option>
                         <option value="Euro">Euro</option>
                         <option value="Quetzal">Quetzal</option>
@@ -27,11 +26,9 @@
                         <option value="Cordoba">Cordoba</option>
                     </select>
                 </div>
-            </div>
-            <div class="row cols-4 p-2">
-                <div class="cols">
+                <div class="col">
                     A:
-                    <select name="" id="CboA" class="form-control">
+                    <select id="CboA" class="form-control">
                         <option value="Dolar">Dolar</option>
                         <option value="Euro">Euro</option>
                         <option value="Quetzal">Quetzal</option>
@@ -47,7 +44,12 @@
                 <p class="bg-success text-white" id="lblRespuesta">Respuesta: </p>
             </div>
         </div>
+        <div class="row row-cols-2 p-2">
+            <div class="col text-center">
+                <input type="submit"  id="btnConver" value="Convertir" class="btn btn-primary"></div>
+        </div>
     </form>
 </form>
+<script src="app.js"></script>
 </body>
 </html>
