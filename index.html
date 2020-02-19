@@ -1,14 +1,53 @@
->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="estilos.css">
-    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Conversores</title>
 </head>
 <body>
-    
+    <form method="post" id="frmConversores">
+
+        <div class="container">
+            <div class="row row-cols-2">
+                <div class="col text-center">
+                    APP Conversores
+                </div>
+            </div>
+            <div class="row row-cols-4 p-2">
+                <div class="col">
+                    De:
+                    <select name="" id="CboDe" class="form-control">
+                        <option value="Dolar">Dolar</option>
+                        <option value="Euro">Euro</option>
+                        <option value="Quetzal">Quetzal</option>
+                        <option value="Lempira">Lempira</option>
+                        <option value="Cordoba">Cordoba</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row cols-4 p-2">
+                <div class="cols">
+                    A:
+                    <select name="" id="CboA" class="form-control">
+                        <option value="Dolar">Dolar</option>
+                        <option value="Euro">Euro</option>
+                        <option value="Quetzal">Quetzal</option>
+                        <option value="Lempira">Lempira</option>
+                        <option value="Cordoba">Cordoba</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row row-cols-4 p-2">
+                <div class="col text-center"><input type="text" required="required" pattern="[0,9]{1,}" placeholder="Cantidad" id="txtCantidadConversor" class="form-control"></div>
+            </div>
+            <div class="col text-center">
+                <p class="bg-success text-white" id="lblRespuesta">Respuesta: </p>
+            </div>
+        </div>
+    </form>
 </form>
 </body>
 </html>
