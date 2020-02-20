@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,45 +11,49 @@
     <form method="post" id="frmConversores">
         <div class="container">
             <div class="row row-cols-2">
-                <div class="col text-center">
-                    APP Conversores
+                <div class="col text-center bg-info text-white">
+                    Conversores 
                 </div>
             </div>
             <div class="row row-cols-4 p-2">
                 <div class="col">
-                    De:
+                    Seleccione un conversor:
+                    <select id="cboConvertir" class="form-control" onchange="seleccionar_opcion()">
+                        <option value="seleccion">Seleccionar</option>
+                        <option value="moneda">Moneda</option>
+                        <option value="longitud">Longitud</option>
+                        <option value="almacenamiento">Almacenamiento</option>
+                        <option value="peso">Peso</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row row-cols-4 p-2">
+                <div class="col">
+                    DE:
                     <select id="CboDe" class="form-control">
-                        <option value="Dolar">Dolar</option>
-                        <option value="Euro">Euro</option>
-                        <option value="Quetzal">Quetzal</option>
-                        <option value="Lempira">Lempira</option>
-                        <option value="Cordoba">Cordoba</option>
                     </select>
                 </div>
                 <div class="col">
                     A:
                     <select id="CboA" class="form-control">
-                        <option value="Dolar">Dolar</option>
-                        <option value="Euro">Euro</option>
-                        <option value="Quetzal">Quetzal</option>
-                        <option value="Lempira">Lempira</option>
-                        <option value="Cordoba">Cordoba</option>
                     </select>
                 </div>
             </div>
             <div class="row row-cols-4 p-2">
-                <div class="col text-center"><input type="text" required="required" pattern="[0,9]{1,}" placeholder="Cantidad" id="txtCantidadConversor" class="form-control"></div>
+                <div class="col text-center">
+                    <input type="text" required="required" pattern="[0-9.]{1,}" placeholder="Cantidad" id="txtCantidadConversor" class="form-control">
+                </div>
+                <div class="col text-center">
+                    <p class="bg-success text-white" id="lblRespuesta">Respuesta: ?</p>
+                </div>
             </div>
-            <div class="col text-center">
-                <p class="bg-success text-white" id="lblRespuesta">Respuesta: </p>
+            <div class="row row-cols-2 p-2">
+                <div class="col text-center">
+                    <input type="submit" id="btnConvertir" value="Convertir" class="btn btn-primary">
+                </div>
             </div>
-        </div>
-        <div class="row row-cols-2 p-2">
-            <div class="col text-center">
-                <input type="submit"  id="btnConver" value="Convertir" class="btn btn-primary"></div>
         </div>
     </form>
-</form>
-<script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
