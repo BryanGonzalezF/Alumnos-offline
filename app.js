@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", e=>{
             "yenes":111.27,
             "rupias":69.75,
             "lempiras":24.36,
-            "Peso(Mx)":19.36,
-            "Bitcoin":0.00026},
+            "peso(Mx)":19.36,
+            "bitcoin":0.00026},
             longitudes = {
               "metro": 1,
               "cm": 100,
@@ -36,19 +36,19 @@ document.addEventListener("DOMContentLoaded", e=>{
     });
   });
   
-  //llenar los select box 
+  
   function seleccionar_opcion() {
     let opcion = document.getElementById('cboConvertir'),
     de1 = document.getElementById('CboDe'),
     a1 = document.getElementById('CboA');
-    //limpia antes de actualizar
+  
     de1.value="";
     a1.value="";
     de1.innerHTML="";
     a1.innerHTML="";
   
     if(opcion.value == "moneda"){
-      var  array = ["dolar!Dolar","colones(SV)!Colones(SV)","yenes!Yenes","lempira!Lempira","peso(Mx)!Peso(Mx)","bitcoin!Bitcoin"]; 
+      var  array = ["dolar!Dolar","colones(SV)!Colones(SV)","yenes!Yenes","lempiras!Lempiras","peso(Mx)!Peso(Mx)","bitcoin!Bitcoin"]; 
     } else if(opcion.value == "longitud"){
       var array = ["metro!Metro","cm!CM","pulgadas!Pulgadas","pie!Pie","varas!Varas","yardas!Yardas","km!KM","millas!Millas"];
    
