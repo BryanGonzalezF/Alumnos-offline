@@ -1,21 +1,50 @@
-var $ = el => document.querySelector(el),
-    frmDocentes = $("#frmDocentes");
-    frmDocentes.addEventListener("submit",e=>{
-    e.preventDefault();
-    e.stopPropagation();
+var appDocente = new Vue({
 
-    let docentes = {
-        accion    : 'nuevo',
-        codigo    : $("#txtCodigoDocente").value,
-        nombre    : $("#txtNombreDocente").value,
-        direccion : $("#txtDireccionDocente").value,
-        telefono  : $("#txtTelefonoDocente").value
-    };
-    fetch(`/Private/Modulos/docentes/procesosd.php?proceso=recibirDatos&docentes=${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
-        $("#respuestaDocente").innerHTML = `
-            <div class="alert alert-success" role="alert">
-                ${resp.msg}
-            </div>
-        `;
-    });
-});
+    el: "#frmDocentes",
+
+    data:{
+        
+        docentes: {
+            idDocente  : $("#frmDocentes").data("iddocente"),
+            accion    : $("#frmDocentes").data("accion"),
+            codigo    : '',
+            nombre    : '',
+            direccion : '',
+            telefono  : '',
+            NIT       : '',
+            msg       : ''
+        }
+
+    },
+    methods:{
+
+        guaradarDocentes: function() {
+            console.log(JSON.stringify(this.docentes));
+
+            fetch(`private/Modulos/Docentes/procesos.php?proceso=recibirDatos&docente=${JSON.stringify(this.docentes)}`).then( resp => resp.json()).then( resp => {
+
+                this.docentes.msg           =    resp.msg;
+                this.docentes.idDocente     =    0;
+                this.docentes.codigo        =    '';
+                this.docentes.nombre        =    '';
+                this.docentes.direccion     =    '';
+                this.docentes.telefono      =    '';
+                this.docentes.NIT           =    '';
+                this.docentes.accion        =    'nuevo';
+
+            })
+            
+        },
+        buscarDocentes: function () {
+
+            $(`#modulo-vista-docentes`).load(`public/vistas/docentes/buscar-docentes.html`, function () {
+
+                appBuscarDocentes.buscarDocentes().show( "scale", 1000 );
+
+            }).draggable().show( "scale", 1000 );
+
+        }
+
+    }
+
+})
